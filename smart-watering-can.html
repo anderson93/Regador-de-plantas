@@ -1,0 +1,335 @@
+<!--     o      Hello, fellow programmer, -->
+<!--  ___|___   it would be a pleasure    -->
+<!-- | O   O |  to be forked on GitHub    -->
+<!-- |___v___|                            -->
+<!--       http://github.com/EEmery       -->
+
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>iot</title>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" href="./favicon.png" />
+    
+  <!-- Google MDL -->
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.blue_grey-deep_orange.min.css" />
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!-- Makes it responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- CSS -->
+  <!-- <link href='./post-style.css' type="text/css" rel='stylesheet'> -->
+  
+  <!-- Used fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Mono:400,300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:500,400,300italic,100' rel='stylesheet' type='text/css'>
+
+  <!-- MathJax -->
+  <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <!-- MathJax Config -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": {
+      scale: 100
+    }});
+  </script>
+    
+</head>
+    
+<body>
+
+  <!-- MENU -->
+
+  <div class="mdl-layout mdl-js-layout">
+      
+    <header class="mdl-layout__header mdl-layout__header--scroll">
+      <div class="mdl-layout__header-row">
+
+        <!-- Title -->
+        <span class="mdl-layout-title">Jars Control</span>
+          
+        <!-- Add spacer, to align navigation to the right -->
+        <div class="mdl-layout-spacer"></div>
+          
+        <!-- Navigation -->
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="../index-br.html">Posts</a>
+          <a class="mdl-navigation__link" href="http://github.com/eemery">GitHub</a>
+          <a class="mdl-navigation__link" href="../about/about-br.html">Sobre</a>
+        </nav>
+
+      </div>
+    </header>
+    
+    <!-- Sidebar navigation -->
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">Jars Control</span> 
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="../index-br.html">Posts</a>
+        <a class="mdl-navigation__link" href="http://github.com/eemery">GitHub</a>
+        <a class="mdl-navigation__link" href="../about/about-br.html">Sobre</a>
+      </nav>
+    </div>
+    
+
+  
+  <main class="mdl-layout__content">
+    <div class="page-content">
+  <!-- MAIN CONTENT -->
+        
+        <!-- SIGN IN WITH GOOGLE -->
+        <button disabled class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="sign-in-button">
+          Sign in with Google
+        </button>
+
+        <!-- SERVER VALUES BUTTONS -->
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="left-button">
+          DECREASE SETPOINT
+        </button>
+
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="right-button">
+          INCREASE SETPOINT
+        </button>
+
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="manual-button">
+          REGAR
+        </button>
+
+        <p id="setpoint-display">SETPOINT:</p>
+        <p id="humidity-display">HUMIDADE:</p>
+
+  <!-- END OF CONTENT -->
+    </div>
+  </main>
+        
+  </div>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+<style>
+/********************************************************
+ ****              MENU AND GENERAL                  ****
+ ********************************************************/
+/* MENU SUPERIOR E LATERAL */
+.mdl-layout__header,
+.mdl-layout__drawer-button
+{
+    color: #FFFFFF;
+}
+
+/* MENU SUPERIOR AND LATERAL */
+.mdl-layout__header,
+.dl-layout__drawer-button
+{
+    color: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+
+/* MENU SUPERIOR - TABS */
+.mdl-layout__header .mdl-layout__header-row .mdl-navigation .mdl-navigation__link
+{
+    font-family: "Roboto", sans-serif;
+    color: #E0E0E0;
+    font-weight: 500;
+    font-size: 100%;
+}
+
+/* MENU SUPERIOR - TABS (HOVER)*/
+.mdl-layout__header .mdl-layout__header-row .mdl-navigation .mdl-navigation__link:hover
+{
+    color: #FFFFFF;
+}
+
+
+/********************************************************
+ ****           POSTS GENERAL (DESKTOP)              ****
+ ********************************************************/
+
+/* Buttons */
+#right-button, #left-button, #manual-button
+{
+  color: #FFFFFF;
+  margin: 3% 0% 0% 3%;
+}
+
+p
+{
+  font-family: "Roboto Mono", sans-serif;
+  font-size: 2vh;
+  margin: 1.5% 1.5% 1.5% 3%;
+  /*margin: 3vh 40vh 3vh 40vh;*/
+}
+
+#sign-in-button
+{
+  position: absolute;
+  right: 3%;
+  color: #000000;
+  margin-top: 3%;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+/********************************************************
+ ****            POSTS GENERAL (PHONES)              ****
+ ********************************************************/
+
+@media only screen and (max-width: 960px) {
+  /*#sign-in-button {
+    margin-top: 25%;
+    margin-left: 3.75%;
+    position: static;
+  }*/
+  #sign-in-button {
+    right: 6%;
+    margin-top: 42%;
+  }
+
+  #right-button, #left-button
+  {
+    margin: 15% 0% 0% 3%;
+  }
+
+  .mdl-layout__header,
+  .mdl-layout__drawer-button {
+    color: #000000;
+  }
+}
+</style>
+
+
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>   <!-- Imports Firebase-->
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCYDfE1mi3v1-oeMBlRfPn-P2vv4b-PUsU",
+    authDomain: "smart-watering-can.firebaseapp.com",
+    databaseURL: "https://smart-watering-can.firebaseio.com",
+    projectId: "smart-watering-can",
+    storageBucket: "smart-watering-can.appspot.com",
+    messagingSenderId: "172584916065"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script> <!-- Ajax CDN-->
+<script src="https://apis.google.com/js/platform.js" async defer></script>        <!-- Imports the Google Auuthentication SDK-->
+<script>
+
+  // ===========================================
+  // AUTHENTICATION
+  // From here on, it's all about authentication
+  // ===========================================
+
+  // Function called when clicking the Login/Logout button.
+  function toggleSignIn() {
+    if (!firebase.auth().currentUser) {
+      var provider = new firebase.auth.GoogleAuthProvider();
+      firebase.auth().signInWithRedirect(provider);
+    } else {
+      firebase.auth().signOut();
+    }
+    document.getElementById('sign-in-button').disabled = true;
+  }
+
+  // Main function
+  function initApp() {
+
+    // Gets the result from the authentication
+    firebase.auth().getRedirectResult().then(function(result) {
+      if (result.credential) {
+        var token = result.credential.accessToken;    // This gives you a Google Access Token. You can use it to access the Google API.
+      }
+      var user = result.user;                         // The signed-in user info.
+    });
+
+    // Event handler for every change on the auth state
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {     // When the user is logged in, changes to sign out button
+        document.getElementById('sign-in-button').textContent = 'Sign out';
+        $("#sign-in-button").removeClass('mdl-button--accent');
+        $("#sign-in-button").attr("style", "color: #000000");
+      } else {        // When the user is logged out, changes to sign in button
+        document.getElementById('sign-in-button').textContent = 'Sign in with Google';
+        $("#sign-in-button").addClass('mdl-button--accent');
+        $("#sign-in-button").attr("style", "color: #FFFFFF");
+      }
+      document.getElementById('sign-in-button').disabled = false;
+    });
+
+    document.getElementById('sign-in-button').addEventListener('click', toggleSignIn, false);
+  }
+
+  // Runs the main function ("initApp()")
+  window.onload = function() {
+    initApp();
+  };    
+
+
+  // ===========================================
+  // CHANGING WEBSITE USER INTERFACE
+  // ===========================================
+
+  var database = firebase.database().ref("jar_1/");   // Creates a reference to the firebase database
+  var database_snapshot;
+
+  // Variables
+  var setpoint;
+  var humidity;
+  var manualButtonState;
+
+  database.on("value", function(snapshot) {
+    setpoint = snapshot.val().setpoint;
+    humidity = snapshot.val().humidity;
+    manualButtonState = snapshot.val().manual;
+
+    $("#setpoint-display").text("SETPOINT: ".concat(setpoint).concat("%"));
+    $("#humidity-display").text("HUMIDADE: ".concat(humidity).concat("%"));
+    
+  });
+
+
+  // ===========================================
+  // COMUNICATION WITH DATABASE
+  // ===========================================
+
+  // When button is clicked, changes firebase server
+  $('#left-button').click(function() {
+    if (setpoint > 0) setpoint -= 1;
+    console.log(setpoint);
+    database.update({'setpoint': setpoint});
+  });
+
+  // When lights is clicked, changes firebase server
+  $('#right-button').click(function() {
+    if (setpoint < 100) setpoint += 1;
+    console.log(setpoint);
+    database.update({'setpoint': setpoint});
+  });
+
+  // When fan is clicked, changes firebase server
+  $('#manual-button').click(function() {
+    console.log('Manual button pressed: '.concat(manualButtonState));
+    if (manualButtonState <= 0) 
+      database.update({'manual': 1});
+    else
+      database.update({'manual': 0});
+  });
+
+
+</script>
